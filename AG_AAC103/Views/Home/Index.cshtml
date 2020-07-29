@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Home Page";
+}
+<div classs=" " row">
+    <p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (DateTime.Now.Hour < 12)
+            {
+                <h3> Good Morning @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : " Guest")</h3>
+            }
+            else if (DateTime.Now.Hour < 17)
+            {
+                <h3> Good Afternoon @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : " Guest")</h3>
+            }
+            else
+            {
+                <h3> Good Evening @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : " Guest")</h3>
+            }
+
+
+        }
+    </p>
+   
+</div>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<AG_AAC103.Models.EmpClass>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User Administration</h2>
+<br />
+<br />
+<p>
+    <button type="button" class="btn btn-info">
+        @Html.ActionLink("Create New", "Edit")
+    </button>
+</p>
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empemail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Squad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Emplocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empdesignation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Squad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emplocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empdesignation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+
+            <td>
+
+                <font color="#17A2b8"><u> @Html.ActionLink("Edit", "Edit", new { id = item.Id })</u></font>
+                |
+                <font color="#17A2b8"><u> @Html.ActionLink("Details", "Details", new { id = item.Id })</u></font>
+                |
+                <font color="#17A2b8"><u>  @Html.ActionLink("Inactive", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are sure wants to Inactivate?');" })</u></font>
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,117 @@
+﻿@model AG_AAC103.Models.EmpClass
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>View</h2>
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayNameFor(model => model.Id)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.UserName)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.Empname)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+            @Html.DisplayFor(model => model.Empname)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.Empemail)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+
+            @Html.DisplayFor(model => model.Empemail)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.Squad)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+            &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+
+            @Html.DisplayFor(model => model.Squad)
+        </dd>
+
+
+        <dd>
+            @Html.DisplayNameFor(model => model.Emplocation)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;
+
+            @Html.DisplayFor(model => model.Emplocation)
+        </dd>
+
+
+        <dd>
+            @Html.DisplayNameFor(model => model.Empdesignation)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+
+
+            @Html.DisplayFor(model => model.Empdesignation)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.IsActive)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp;&nbsp; &nbsp; &nbsp;
+
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.Role)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
+
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+        <dd>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
+
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

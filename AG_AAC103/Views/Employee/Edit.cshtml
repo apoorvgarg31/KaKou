@@ -1,0 +1,128 @@
+﻿@using AG_AAC103.Models
+@model AG_AAC103.Models.EmpClass
+    @using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Employee Details</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.Empname, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Empname, new { htmlAttributes = new { @class = "form-control", style = "width:550px" } })
+            @Html.ValidationMessageFor(model => model.Empname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", style = "width:550px" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", style = "width:550px" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Empemail, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Empemail, new { htmlAttributes = new { @class = "form-control", style = "width:550px" } })
+            @Html.ValidationMessageFor(model => model.Empemail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Squad, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("squad",
+                new SelectList(Enum.GetValues(typeof(SquadList))),
+                "Select Squad",
+                new { @class = "form-control", style = "width:550px" })
+            @Html.ValidationMessageFor(model => model.Squad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Emplocation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("emplocation",
+                new SelectList(Enum.GetValues(typeof(Location))),
+                "Select Location",
+                new { @class = "form-control", style = "width:550px" })
+            @Html.ValidationMessageFor(model => model.Emplocation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Empdesignation, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("empdesignation",
+                new SelectList(Enum.GetValues(typeof(Desgination))),
+                "Select Designation",
+                new { @class = "form-control", style = "width:550px" })
+            @Html.ValidationMessageFor(model => model.Empdesignation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("IsActive",
+                new SelectList(Enum.GetValues(typeof(IsActiveList))),
+                "Select Status",
+                new { @class = "form-control", style = "width:550px" })
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Role",
+                new SelectList(Enum.GetValues(typeof(RoleList))),
+                "Select Role",
+                new { @class = "form-control", style = "width:550px" })
+            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-info" />
+        </div>
+    </div>
+    <div class="text-danger">
+        @ViewBag.message
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
